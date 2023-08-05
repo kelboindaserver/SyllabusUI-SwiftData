@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D64A64022A7D9188005BF63C /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A64012A7D9188005BF63C /* Func.swift */; };
 		D656272E2A76CBB9001641DF /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272D2A76CBB9001641DF /* Tabbar.swift */; };
 		D65627302A76CCB5001641DF /* ExamSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272F2A76CCB5001641DF /* ExamSchedule.swift */; };
 		D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AEB2A768F3300E5AE82 /* SyllabusUIApp.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D64A64012A7D9188005BF63C /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		D656272D2A76CBB9001641DF /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		D656272F2A76CCB5001641DF /* ExamSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSchedule.swift; sourceTree = "<group>"; };
 		D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyllabusUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			children = (
 				D67A7AF42A768F3500E5AE82 /* Item.swift */,
 				D69B23AB2A76E40800428FB5 /* Exam.swift */,
+				D64A64012A7D9188005BF63C /* Func.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				D69B23AC2A76E40800428FB5 /* Exam.swift in Sources */,
 				D67A7AF52A768F3500E5AE82 /* Item.swift in Sources */,
 				D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */,
+				D64A64022A7D9188005BF63C /* Func.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
