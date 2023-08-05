@@ -18,14 +18,17 @@ class NotificationHandler {
             }
         }
     }
-    func sendNotification (date: Date, type: String, timeInterval: Double = 10, title:String, body: String) {
+    func sendNotification (date: Date, type: String,day:Int,hour : Int,minute : Int, title:String, body: String) {
         var trigger: UNNotificationTrigger?
         if type == "exam" {
             let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger (dateMatching: dateComponents, repeats: false)
         } else if type == "lesson" {
-            let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
-            trigger = UNCalendarNotificationTrigger (dateMatching: dateComponents, repeats: false)
+            var dateComponents = DateComponents()
+            dateComponents.weekday = day
+            dateComponents.hour = hour
+            dateComponents.minute = minute
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
         let content = UNMutableNotificationContent()
         content.title = title

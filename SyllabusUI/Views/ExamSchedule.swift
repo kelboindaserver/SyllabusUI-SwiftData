@@ -11,6 +11,8 @@ import SwiftData
 struct ExamSchedule: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var exams: [Exam]
+    let funcs = Funcs()
+    
     func formattedDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy , E"
@@ -46,7 +48,7 @@ struct ExamSchedule: View {
                                             .fontWeight(.bold)
                                             .font(.system(size: 20))
                                         Spacer()
-                                        Text(exam.examTime)
+                                        Text(funcs.getFormattedTime(date: exam.examDate))
                                             .padding()
                                             .fontWeight(.light)
                                             .font(.system(size: 15))

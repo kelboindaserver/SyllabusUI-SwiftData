@@ -13,11 +13,13 @@ struct DersEkle: View {
     @Environment(\.presentationMode) var presentationMode
     @Query private var items: [Item]
     @State private var lessonN = ""
+    @State private var day = 2
     @State private var lessonStart = Date()
     @State private var lessonEnd = Date()
     @State private var selection = "Monday"
     @State private var showAlert = false
     @State private var days = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
+    let funcs = Funcs()
     @FocusState private var emailBool : Bool
     var lessonSTime: String {
         let formatter = DateFormatter()
@@ -125,6 +127,41 @@ struct DersEkle: View {
         withAnimation {
             let newItem = Item(lessonName: lessonN, lessonTime: "\(lessonSTime) - \(lessonETime)" , day: selection)
             modelContext.insert(newItem)
+            switch selection{
+            case "Monday":
+                day = 1
+                break
+            case "Tuesday":
+                day = 2
+                break
+            case "Wednesday":
+                day = 3
+                break
+            case "Thursday":
+                day = 4
+                break
+            case "Friday":
+                day = 5
+                break
+            default:
+                day = 1
+            }
+            if funcs.containsAMorPM(lessonSTime){
+                if let timeInt = funcs.convertToHourAndMinuteAMPM(lessonSTime){
+                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day:day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)")
+                    
+                }else{
+                    print("convert failed")
+                }
+            }else{
+                if let timeInt = funcs.convertToHourAndMinute(lessonSTime){
+                    print("success not am")
+                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day: day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)")
+                }else{
+                    print("convert failed")
+                }
+            }
+           
         }
     }
 }

@@ -17,6 +17,8 @@ struct addExam: View {
     @State private var examT = Date()
     @FocusState private var emailBool : Bool
     @State private var showAlert = false
+    let notify = NotificationHandler()
+    let funcs = Funcs()
     var ExamT: String {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
@@ -46,13 +48,8 @@ struct addExam: View {
                         .padding([.top,.trailing,.leading] , 30)
                         .font(.system(.headline, design: .rounded,weight: .bold))
                 VStack{
-                    Text("Start At: ")
-                    DatePicker("", selection: $examT,displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-                VStack{
                     Text("Exam Time:")
-                    DatePicker("", selection: $examD,displayedComponents: .date)
+                    DatePicker("", selection: $examD,displayedComponents: [.date,.hourAndMinute])
                         .labelsHidden()
                 }
                 Button(action:{
@@ -88,6 +85,7 @@ struct addExam: View {
         withAnimation {
             @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT)
             modelContext.insert(newItem)
+            notify.sendNotification(date: examD, type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))")
         }
     }
 }

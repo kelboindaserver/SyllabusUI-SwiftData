@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Tabbar: View {
     @State private var selectedTab = "tab1"
+    let notify = NotificationHandler()
     var body: some View {
         TabView(selection: $selectedTab) {
             ContentView().tabItem {
@@ -28,6 +29,7 @@ struct Tabbar: View {
             appearance.backgroundColor = UIColor(Color.black.opacity(0.1))
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
+            notify.askPerm()
         }
     }
 }

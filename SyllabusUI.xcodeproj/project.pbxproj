@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D64A64022A7D9188005BF63C /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64A64012A7D9188005BF63C /* Func.swift */; };
 		D656272E2A76CBB9001641DF /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272D2A76CBB9001641DF /* Tabbar.swift */; };
 		D65627302A76CCB5001641DF /* ExamSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272F2A76CCB5001641DF /* ExamSchedule.swift */; };
 		D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AEB2A768F3300E5AE82 /* SyllabusUIApp.swift */; };
@@ -19,10 +18,10 @@
 		D694AC5F2A786FE800C24B02 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */; };
 		D69B23A82A76DFB200428FB5 /* addExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23A72A76DFB200428FB5 /* addExam.swift */; };
 		D69B23AC2A76E40800428FB5 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23AB2A76E40800428FB5 /* Exam.swift */; };
+		D6C18E022A7E5664009AE732 /* Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C18E012A7E5664009AE732 /* Funcs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D64A64012A7D9188005BF63C /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 		D656272D2A76CBB9001641DF /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		D656272F2A76CCB5001641DF /* ExamSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSchedule.swift; sourceTree = "<group>"; };
 		D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyllabusUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +34,7 @@
 		D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		D69B23A72A76DFB200428FB5 /* addExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addExam.swift; sourceTree = "<group>"; };
 		D69B23AB2A76E40800428FB5 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		D6C18E012A7E5664009AE732 /* Funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			children = (
 				D67A7AF42A768F3500E5AE82 /* Item.swift */,
 				D69B23AB2A76E40800428FB5 /* Exam.swift */,
-				D64A64012A7D9188005BF63C /* Func.swift */,
+				D6C18E012A7E5664009AE732 /* Funcs.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 				D69B23AC2A76E40800428FB5 /* Exam.swift in Sources */,
 				D67A7AF52A768F3500E5AE82 /* Item.swift in Sources */,
 				D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */,
-				D64A64022A7D9188005BF63C /* Func.swift in Sources */,
+				D6C18E022A7E5664009AE732 /* Funcs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
