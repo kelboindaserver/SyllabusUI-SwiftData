@@ -13,6 +13,7 @@ struct DersEkle: View {
     @Environment(\.presentationMode) var presentationMode
     @Query private var items: [Item]
     @State private var lessonN = ""
+    @State private var lesId = UUID().uuidString
     @State private var day = 2
     @State private var lessonStart = Date()
     @State private var lessonEnd = Date()
@@ -125,30 +126,32 @@ struct DersEkle: View {
     }
     private func addItem() {
         withAnimation {
-            let newItem = Item(lessonName: lessonN, lessonTime: "\(lessonSTime) - \(lessonETime)" , day: selection)
+            let newItem = Item(lessonName: lessonN, lessonTime: "\(lessonSTime) - \(lessonETime)" , day: selection,id: lesId)
             modelContext.insert(newItem)
             switch selection{
             case "Monday":
-                day = 1
-                break
-            case "Tuesday":
                 day = 2
                 break
-            case "Wednesday":
+            case "Tuesday":
                 day = 3
                 break
-            case "Thursday":
+            case "Wednesday":
                 day = 4
                 break
-            case "Friday":
+            case "Thursday":
                 day = 5
+                break
+            case "Friday":
+                day = 6
                 break
             default:
                 day = 1
             }
             if funcs.containsAMorPM(lessonSTime){
                 if let timeInt = funcs.convertToHourAndMinuteAMPM(lessonSTime){
-                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day:day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)")
+                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day:day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)",id:lesId)
+                    print(timeInt.hour)
+                    print(timeInt.minute)
                     
                 }else{
                     print("convert failed")
@@ -156,7 +159,7 @@ struct DersEkle: View {
             }else{
                 if let timeInt = funcs.convertToHourAndMinute(lessonSTime){
                     print("success not am")
-                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day: day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)")
+                    NotificationHandler().sendNotification(date: Date(), type: "lesson", day: day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)",id: lesId)
                 }else{
                     print("convert failed")
                 }

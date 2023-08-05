@@ -13,6 +13,7 @@ struct addExam: View {
     @Environment(\.presentationMode) var presentationMode
     @Query private var exams: [Exam]
     @State private var examN = ""
+    @State private var id = UUID().uuidString
     @State private var examD = Date()
     @State private var examT = Date()
     @FocusState private var emailBool : Bool
@@ -83,9 +84,9 @@ struct addExam: View {
     }
     private func addItem() {
         withAnimation {
-            @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT)
+            @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT,id: id)
             modelContext.insert(newItem)
-            notify.sendNotification(date: examD, type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))")
+            notify.sendNotification(date: examD, type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))", id: id)
         }
     }
 }

@@ -18,7 +18,7 @@ class NotificationHandler {
             }
         }
     }
-    func sendNotification (date: Date, type: String,day:Int,hour : Int,minute : Int, title:String, body: String) {
+    func sendNotification (date: Date, type: String,day:Int,hour : Int,minute : Int, title:String, body: String,id:String) {
         var trigger: UNNotificationTrigger?
         if type == "exam" {
             let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
@@ -28,13 +28,14 @@ class NotificationHandler {
             dateComponents.weekday = day
             dateComponents.hour = hour
             dateComponents.minute = minute
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
+        
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = UNNotificationSound.default
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier:id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
 }

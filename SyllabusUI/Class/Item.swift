@@ -14,10 +14,10 @@ final class Item {
     var lessonTime: String
     var day : String
     var id: String
-    init(lessonName: String, lessonTime: String, day: String) {
+    init(lessonName: String, lessonTime: String, day: String,id: String) {
         self.lessonName = lessonName
         self.lessonTime = lessonTime
         self.day = day
-        self.id = UUID().uuidString
+        self.id = id
     }
 }
