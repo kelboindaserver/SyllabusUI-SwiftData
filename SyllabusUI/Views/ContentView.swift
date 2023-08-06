@@ -11,18 +11,18 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
-    
+    let funcs = Funcs()
     var body: some View {
         NavigationView {
             ZStack{
                 
                 RoundedRectangle(cornerRadius: 25)
                     .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.725, saturation: 1.0, brightness: 1.0))
+                    .foregroundColor(Color(hue: 0.704, saturation: 0.627, brightness: 0.798))
                     .offset(x: -270)
                 RoundedRectangle(cornerRadius: 25)
                     .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.604, saturation: 1.0, brightness: 1.0, opacity: 0.602))
+                    .foregroundColor(Color(hue: 0.667, saturation: 0.764, brightness: 0.769, opacity: 0.602))
                     .offset(x: 300)
                 
                 VStack(alignment: .leading){
@@ -171,6 +171,7 @@ struct ContentView: View {
         withAnimation {
             for index in offsets {
                 modelContext.delete(items[index])
+                funcs.cancelNotification(id: items[index].id)
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 class Funcs {
     func getFormattedTime(date: Date) -> String {
             let dateFormatter = DateFormatter()
@@ -39,5 +40,12 @@ class Funcs {
     }
     func containsAMorPM(_ inputString: String) -> Bool {
         return inputString.range(of: "AM|PM", options: .regularExpression) != nil
+    }
+    func cancelNotification(id:String) {
+        // Bildirimi iptal etmek için kullanılacak kimliği belirtin
+        let notificationID = id
+        
+        // Bildirimi iptal et
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationID])
     }
 }

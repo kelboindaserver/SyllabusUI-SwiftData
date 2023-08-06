@@ -26,11 +26,11 @@ struct ExamSchedule: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 25)
                     .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.474, saturation: 0.624, brightness: 0.962, opacity: 0.726))
+                    .foregroundColor(Color(hue: 0.474, saturation: 0.837, brightness: 0.74, opacity: 0.726))
                     .offset(x: -270)
                 RoundedRectangle(cornerRadius: 25)
                     .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.356, saturation: 1.0, brightness: 1.0, opacity: 0.602))
+                    .foregroundColor(Color(hue: 0.612, saturation: 1.0, brightness: 1.0, opacity: 0.602))
                     .offset(x: 300)
                 VStack(alignment: .leading){
                     Text("Exam Schedule")
@@ -78,6 +78,7 @@ struct ExamSchedule: View {
         withAnimation {
             for index in offsets {
                 modelContext.delete(sortedExams[index])
+                funcs.cancelNotification(id: exams[index].id)
             }
         }
     }

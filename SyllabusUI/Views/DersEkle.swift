@@ -37,11 +37,11 @@ struct DersEkle: View {
         ZStack{
             RoundedRectangle(cornerRadius: 25)
                 .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.58, saturation: 1.0, brightness: 1.0, opacity: 0.602))
+                .foregroundColor(Color(hue: 0.351, saturation: 0.657, brightness: 0.848, opacity: 0.602))
                 .offset(x: -270)
             RoundedRectangle(cornerRadius: 25)
                 .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.918, saturation: 0.977, brightness: 1.0, opacity: 0.622))
+                .foregroundColor(Color(hue: 0.518, saturation: 0.669, brightness: 0.77, opacity: 0.622))
                 .offset(x: 300)
             
             VStack(alignment: .center){
@@ -88,7 +88,7 @@ struct DersEkle: View {
                 } .foregroundColor(.black)
                     .padding()
                     .background(
-                        Color(hue: 0.604, saturation: 0.667, brightness: 0.809)
+                        Color(hue: 0.374, saturation: 0.778, brightness: 0.804)
                     )
                     .cornerRadius(25)
                     .padding(.top, 30)

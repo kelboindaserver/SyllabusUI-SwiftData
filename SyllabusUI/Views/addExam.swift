@@ -29,11 +29,11 @@ struct addExam: View {
         ZStack{
             RoundedRectangle(cornerRadius: 25)
                 .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.58, saturation: 1.0, brightness: 1.0, opacity: 0.602))
+                .foregroundColor(Color(hue: 0.309, saturation: 0.652, brightness: 0.655, opacity: 0.602))
                 .offset(x: -270)
             RoundedRectangle(cornerRadius: 25)
                 .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.918, saturation: 0.977, brightness: 1.0, opacity: 0.622))
+                .foregroundColor(Color(hue: 0.594, saturation: 0.696, brightness: 0.75, opacity: 0.622))
                 .offset(x: 300)
             
             VStack{
@@ -65,7 +65,7 @@ struct addExam: View {
                 }) .foregroundColor(.black)
                     .padding()
                     .background(
-                        Color(hue: 0.604, saturation: 0.667, brightness: 0.809)
+                        Color(hue: 0.381, saturation: 0.577, brightness: 0.818)
                     )
                     .cornerRadius(25)
                     .padding(.top, 30)
