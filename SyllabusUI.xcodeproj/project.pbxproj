@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D636C49A2A7FCE230051E306 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C4992A7FCE230051E306 /* WidgetKit.framework */; };
+		D636C49C2A7FCE230051E306 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C49B2A7FCE230051E306 /* SwiftUI.framework */; };
+		D636C49F2A7FCE230051E306 /* SyWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636C49E2A7FCE230051E306 /* SyWidgetsBundle.swift */; };
+		D636C4A32A7FCE250051E306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D636C4A22A7FCE250051E306 /* Assets.xcassets */; };
+		D636C4A72A7FCE250051E306 /* SyWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D636C4972A7FCE230051E306 /* SyWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D636C4AC2A7FCFB70051E306 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23AB2A76E40800428FB5 /* Exam.swift */; };
+		D636C4AE2A7FD2130051E306 /* SyWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636C4A02A7FCE230051E306 /* SyWidgets.swift */; };
 		D656272E2A76CBB9001641DF /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272D2A76CBB9001641DF /* Tabbar.swift */; };
 		D65627302A76CCB5001641DF /* ExamSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272F2A76CCB5001641DF /* ExamSchedule.swift */; };
 		D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AEB2A768F3300E5AE82 /* SyllabusUIApp.swift */; };
@@ -21,7 +28,38 @@
 		D6C18E022A7E5664009AE732 /* Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C18E012A7E5664009AE732 /* Funcs.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D636C4A52A7FCE250051E306 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D67A7AE02A768F3300E5AE82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D636C4962A7FCE230051E306;
+			remoteInfo = SyWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D636C4A82A7FCE250051E306 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D636C4A72A7FCE250051E306 /* SyWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D636C4972A7FCE230051E306 /* SyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D636C4992A7FCE230051E306 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D636C49B2A7FCE230051E306 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D636C49E2A7FCE230051E306 /* SyWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgetsBundle.swift; sourceTree = "<group>"; };
+		D636C4A02A7FCE230051E306 /* SyWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgets.swift; sourceTree = "<group>"; };
+		D636C4A22A7FCE250051E306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D636C4A42A7FCE250051E306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D656272D2A76CBB9001641DF /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		D656272F2A76CCB5001641DF /* ExamSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSchedule.swift; sourceTree = "<group>"; };
 		D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyllabusUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +76,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D636C4942A7FCE230051E306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D636C49C2A7FCE230051E306 /* SwiftUI.framework in Frameworks */,
+				D636C49A2A7FCE230051E306 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D67A7AE52A768F3300E5AE82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D636C4982A7FCE230051E306 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D636C4992A7FCE230051E306 /* WidgetKit.framework */,
+				D636C49B2A7FCE230051E306 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D636C49D2A7FCE230051E306 /* SyWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				D636C4A02A7FCE230051E306 /* SyWidgets.swift */,
+				D636C49E2A7FCE230051E306 /* SyWidgetsBundle.swift */,
+				D636C4A22A7FCE250051E306 /* Assets.xcassets */,
+				D636C4A42A7FCE250051E306 /* Info.plist */,
+			);
+			path = SyWidgets;
+			sourceTree = "<group>";
+		};
 		D67A7ADF2A768F3300E5AE82 = {
 			isa = PBXGroup;
 			children = (
 				D67A7AEA2A768F3300E5AE82 /* SyllabusUI */,
+				D636C49D2A7FCE230051E306 /* SyWidgets */,
+				D636C4982A7FCE230051E306 /* Frameworks */,
 				D67A7AE92A768F3300E5AE82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */,
+				D636C4972A7FCE230051E306 /* SyWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +188,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D636C4962A7FCE230051E306 /* SyWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D636C4AB2A7FCE250051E306 /* Build configuration list for PBXNativeTarget "SyWidgetsExtension" */;
+			buildPhases = (
+				D636C4932A7FCE230051E306 /* Sources */,
+				D636C4942A7FCE230051E306 /* Frameworks */,
+				D636C4952A7FCE230051E306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SyWidgetsExtension;
+			productName = SyWidgetsExtension;
+			productReference = D636C4972A7FCE230051E306 /* SyWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D67A7AE72A768F3300E5AE82 /* SyllabusUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D67A7AF82A768F3500E5AE82 /* Build configuration list for PBXNativeTarget "SyllabusUI" */;
@@ -125,10 +212,12 @@
 				D67A7AE42A768F3300E5AE82 /* Sources */,
 				D67A7AE52A768F3300E5AE82 /* Frameworks */,
 				D67A7AE62A768F3300E5AE82 /* Resources */,
+				D636C4A82A7FCE250051E306 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D636C4A62A7FCE250051E306 /* PBXTargetDependency */,
 			);
 			name = SyllabusUI;
 			productName = SyllabusUI;
@@ -145,6 +234,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					D636C4962A7FCE230051E306 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					D67A7AE72A768F3300E5AE82 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -164,11 +256,20 @@
 			projectRoot = "";
 			targets = (
 				D67A7AE72A768F3300E5AE82 /* SyllabusUI */,
+				D636C4962A7FCE230051E306 /* SyWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D636C4952A7FCE230051E306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D636C4A32A7FCE250051E306 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D67A7AE62A768F3300E5AE82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +282,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D636C4932A7FCE230051E306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D636C49F2A7FCE230051E306 /* SyWidgetsBundle.swift in Sources */,
+				D636C4AE2A7FD2130051E306 /* SyWidgets.swift in Sources */,
+				D636C4AC2A7FCFB70051E306 /* Exam.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D67A7AE42A768F3300E5AE82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,7 +311,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D636C4A62A7FCE250051E306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D636C4962A7FCE230051E306 /* SyWidgetsExtension */;
+			targetProxy = D636C4A52A7FCE250051E306 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D636C4A92A7FCE250051E306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGJ86PX2CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SyWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelboidev.SyllabusUI.SyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D636C4AA2A7FCE250051E306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YGJ86PX2CS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SyWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SyWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kelboidev.SyllabusUI.SyWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D67A7AF62A768F3500E5AE82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -323,6 +496,7 @@
 		D67A7AF92A768F3500E5AE82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -353,6 +527,7 @@
 		D67A7AFA2A768F3500E5AE82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -383,6 +558,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D636C4AB2A7FCE250051E306 /* Build configuration list for PBXNativeTarget "SyWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D636C4A92A7FCE250051E306 /* Debug */,
+				D636C4AA2A7FCE250051E306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D67A7AE32A768F3300E5AE82 /* Build configuration list for PBXProject "SyllabusUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 struct ExamSchedule: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var exams: [Exam]
