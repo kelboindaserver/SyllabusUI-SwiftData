@@ -17,11 +17,9 @@ class Funcs {
         let timeComponents = timeString.components(separatedBy: " - ")
         guard let startTimeString = timeComponents.first else { return nil }
         let timeParts = startTimeString.components(separatedBy: ":")
-        
         guard timeParts.count == 2,
               let hour = Int(timeParts[0]),
               let minute = Int(timeParts[1]) else { return nil }
-        
         return (hour, minute)
     }
     func convertToHourAndMinuteAMPM(_ timeString: String) -> (hour: Int, minute: Int)? {
@@ -42,10 +40,15 @@ class Funcs {
         return inputString.range(of: "AM|PM", options: .regularExpression) != nil
     }
     func cancelNotification(id:String) {
-        // Bildirimi iptal etmek için kullanılacak kimliği belirtin
         let notificationID = id
-        
-        // Bildirimi iptal et
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationID])
     }
+    func formattedDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy , E"
+        return dateFormatter.string(from: date)
+    }
+    func subtractMinutes(from date: Date, minutes: Int) -> Date {
+           return Calendar.current.date(byAdding: .minute, value: -minutes, to: date)!
+       }
 }

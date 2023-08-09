@@ -86,7 +86,7 @@ struct addExam: View {
         withAnimation {
             @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT,id: id)
             modelContext.insert(newItem)
-            notify.sendNotification(date: examD, type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))", id: id)
+            notify.sendNotification(date: funcs.subtractMinutes(from: examD, minutes: 15), type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))", id: id)
         }
     }
 }
