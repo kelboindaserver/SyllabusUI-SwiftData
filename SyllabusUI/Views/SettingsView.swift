@@ -23,6 +23,9 @@ struct SettingsView: View {
                 .foregroundColor(Color(hue: 0.667, saturation: 0.764, brightness: 0.769, opacity: 0.602))
                 .offset(x: 300)
             VStack{
+                Text("Syllabus")
+                    .font(.system(size: 30,weight: .bold))
+                    .padding(.horizontal, 30)
                 List{
                     Section(""){
                         HStack{
@@ -37,12 +40,7 @@ struct SettingsView: View {
                                 }
                             }.buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
-                            
                         }
-                    }
-                    .labelsHidden()
-                    .padding(20)
-                    Section(""){
                         HStack{
                             Text("Set Color")
                                 .multilineTextAlignment(.center)
@@ -55,8 +53,6 @@ struct SettingsView: View {
                                 }
                             }.buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
-                            
-                            
                         }
                     }
                     .labelsHidden()

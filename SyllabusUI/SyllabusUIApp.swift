@@ -15,6 +15,6 @@ struct SyllabusUIApp: App {
         WindowGroup {
             Tabbar()
         }
-        .modelContainer(for: [Item.self,Exam.self,SettingsClass.self])
+        .modelContainer(for: [Item.self,Exam.self])
     }
 }

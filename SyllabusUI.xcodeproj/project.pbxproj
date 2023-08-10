@@ -23,8 +23,8 @@
 		D67A7AF32A768F3500E5AE82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A7AF22A768F3500E5AE82 /* Preview Assets.xcassets */; };
 		D67A7AF52A768F3500E5AE82 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AF42A768F3500E5AE82 /* Item.swift */; };
 		D67A7AFC2A7691BD00E5AE82 /* DersEkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AFB2A7691BD00E5AE82 /* DersEkle.swift */; };
+		D681E3452A844CF100DF7B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A7AEF2A768F3500E5AE82 /* Assets.xcassets */; };
 		D684AE752A82F1A7006D93A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D684AE742A82F1A7006D93A7 /* SettingsView.swift */; };
-		D684AE772A82F1B2006D93A7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D684AE762A82F1B2006D93A7 /* Settings.swift */; };
 		D694AC5F2A786FE800C24B02 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */; };
 		D69B23A82A76DFB200428FB5 /* addExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23A72A76DFB200428FB5 /* addExam.swift */; };
 		D69B23AC2A76E40800428FB5 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23AB2A76E40800428FB5 /* Exam.swift */; };
@@ -73,10 +73,10 @@
 		D67A7AF42A768F3500E5AE82 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D67A7AFB2A7691BD00E5AE82 /* DersEkle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DersEkle.swift; sourceTree = "<group>"; };
 		D684AE742A82F1A7006D93A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		D684AE762A82F1B2006D93A7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		D69B23A72A76DFB200428FB5 /* addExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addExam.swift; sourceTree = "<group>"; };
 		D69B23AB2A76E40800428FB5 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		D6A80D932A8417330044D0DF /* SyWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SyWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		D6BC529A2A80F20100DFFA96 /* SyllabusUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SyllabusUI.entitlements; sourceTree = "<group>"; };
 		D6C18E012A7E5664009AE732 /* Funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +124,7 @@
 		D67A7ADF2A768F3300E5AE82 = {
 			isa = PBXGroup;
 			children = (
+				D6A80D932A8417330044D0DF /* SyWidgetsExtension.entitlements */,
 				D67A7AEA2A768F3300E5AE82 /* SyllabusUI */,
 				D6471E482A83BE1700F7D870 /* SyWidgets */,
 				D636C4982A7FCE230051E306 /* Frameworks */,
@@ -181,7 +182,6 @@
 				D67A7AF42A768F3500E5AE82 /* Item.swift */,
 				D69B23AB2A76E40800428FB5 /* Exam.swift */,
 				D6C18E012A7E5664009AE732 /* Funcs.swift */,
-				D684AE762A82F1B2006D93A7 /* Settings.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -275,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D681E3452A844CF100DF7B39 /* Assets.xcassets in Resources */,
 				D6471E4E2A83BE1900F7D870 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +313,6 @@
 				D67A7AEE2A768F3300E5AE82 /* ContentView.swift in Sources */,
 				D65627302A76CCB5001641DF /* ExamSchedule.swift in Sources */,
 				D69B23A82A76DFB200428FB5 /* addExam.swift in Sources */,
-				D684AE772A82F1B2006D93A7 /* Settings.swift in Sources */,
 				D69B23AC2A76E40800428FB5 /* Exam.swift in Sources */,
 				D67A7AF52A768F3500E5AE82 /* Item.swift in Sources */,
 				D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */,
@@ -337,6 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SyWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YGJ86PX2CS;
@@ -364,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SyWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YGJ86PX2CS;

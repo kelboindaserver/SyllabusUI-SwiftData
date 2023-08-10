@@ -17,12 +17,12 @@ struct Tabbar: View {
                 Text("Syllabus")
             }.tag("tab1")
             ExamSchedule().tabItem {
-                
                 Image(systemName: "folder.fill")
-                    
                 Text("Exam Schedule")
             }.tag("tab2")
-
+            SettingsView().tabItem {
+                Image(systemName: "gear")
+                Text("Settings") }
         }.onAppear {
             let appearance = UITabBarAppearance()
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
@@ -36,5 +36,5 @@ struct Tabbar: View {
 
 #Preview {
     Tabbar()
-        
+    
 }
