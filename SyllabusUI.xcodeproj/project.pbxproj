@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6450B092A8921EE00F4AD6C /* SettingsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6450B082A8921EE00F4AD6C /* SettingsClass.swift */; };
 		D6471E462A83BE1700F7D870 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C4992A7FCE230051E306 /* WidgetKit.framework */; };
 		D6471E472A83BE1700F7D870 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C49B2A7FCE230051E306 /* SwiftUI.framework */; };
 		D6471E4A2A83BE1700F7D870 /* SyWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6471E492A83BE1700F7D870 /* SyWidgetsBundle.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		D636C4992A7FCE230051E306 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D636C49B2A7FCE230051E306 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D6450B082A8921EE00F4AD6C /* SettingsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClass.swift; sourceTree = "<group>"; };
 		D6471E452A83BE1700F7D870 /* SyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6471E492A83BE1700F7D870 /* SyWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgetsBundle.swift; sourceTree = "<group>"; };
 		D6471E4B2A83BE1700F7D870 /* SyWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgets.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				D67A7AF42A768F3500E5AE82 /* Item.swift */,
 				D69B23AB2A76E40800428FB5 /* Exam.swift */,
 				D6C18E012A7E5664009AE732 /* Funcs.swift */,
+				D6450B082A8921EE00F4AD6C /* SettingsClass.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67A7AFC2A7691BD00E5AE82 /* DersEkle.swift in Sources */,
+				D6450B092A8921EE00F4AD6C /* SettingsClass.swift in Sources */,
 				D694AC5F2A786FE800C24B02 /* NotificationHandler.swift in Sources */,
 				D656272E2A76CBB9001641DF /* Tabbar.swift in Sources */,
 				D67A7AEE2A768F3300E5AE82 /* ContentView.swift in Sources */,

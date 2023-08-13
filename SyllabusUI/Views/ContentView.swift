@@ -10,21 +10,12 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query private var items: [Item]
     let funcs = Funcs()
     var body: some View {
         NavigationView {
             ZStack{
-                
-                RoundedRectangle(cornerRadius: 25)
-                    .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.704, saturation: 0.627, brightness: 0.798))
-                    .offset(x: -270)
-                RoundedRectangle(cornerRadius: 25)
-                    .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.667, saturation: 0.764, brightness: 0.769, opacity: 0.602))
-                    .offset(x: 300)
-                
                 VStack(alignment: .leading){
                     Text("Syllabus")
                         .font(.system(size: 30,weight: .bold))
@@ -143,30 +134,21 @@ struct ContentView: View {
                             }
                         
                     }.scrollContentBackground(.hidden)
-                    
-                    
-                    
-                    
-                    
                 }
                 
-            }.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    NavigationLink(destination: DersEkle()) {
-                        Image(systemName: "plus.circle.fill")
-                        
+            }.background(RadialGradient(gradient: Gradient(colors: [Color(hue: 0.609, saturation: 0.652, brightness: 0.655, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650))
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
                     }
-                    
+                    ToolbarItem {
+                        NavigationLink(destination: DersEkle()) {
+                            Image(systemName: "plus.circle.fill")
+                        }
+                    }
                 }
-            }
-            
         }.navigationViewStyle(StackNavigationViewStyle())
-        
     }
-    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -176,8 +158,8 @@ struct ContentView: View {
         }
     }
 }
-
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
+    
 }

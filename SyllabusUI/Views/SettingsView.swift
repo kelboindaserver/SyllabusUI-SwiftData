@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
-    @State private var selectionTime = "15"
+    @State private var selectionTime = 15
     @State private var selectionColor = "Blue"
-    @State private var timeArray = ["0","10","15","30","40","45","60"]
+    @Bindable var setTime = SettingsClass()
+    @State private var timeArray = [0,10,15,30,40,45,60]
     @State private var colorArray = ["Blue","Purple","Orange","Black","Pink","Red","Yellow"]
     var body: some View {
         ZStack{
@@ -22,30 +24,33 @@ struct SettingsView: View {
                 .blur(radius: 250)
                 .foregroundColor(Color(hue: 0.667, saturation: 0.764, brightness: 0.769, opacity: 0.602))
                 .offset(x: 300)
-            VStack{
-                Text("Syllabus")
+            VStack(alignment: .leading){
+                Text("Settings")
                     .font(.system(size: 30,weight: .bold))
                     .padding(.horizontal, 30)
+                    .padding(.top,40)
                 List{
                     Section(""){
                         HStack{
-                            Text("Set Notification Time :")
+                            Text("Notification Time :")
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18,weight: .bold))
-                                .frame(width: .infinity)
                             Spacer()
                             Picker("", selection: $selectionTime) {
-                                ForEach(timeArray,id: \.self) {
-                                    Text($0)
+                                ForEach(timeArray, id: \.self) { time in
+                                    Text("\(time)")
                                 }
                             }.buttonStyle(.borderedProminent)
                                 .tint(.accentColor)
+                                .onChange(of: selectionTime) {
+                                    setTime.time = selectionTime
+                                    print(setTime.time)
+                                }
                         }
                         HStack{
-                            Text("Set Color")
+                            Text("Color")
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18,weight: .bold))
-                                .frame(width: .infinity)
                             Spacer()
                             Picker("", selection: $selectionColor) {
                                 ForEach(colorArray,id: \.self) {

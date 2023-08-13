@@ -11,6 +11,7 @@ import SwiftData
 struct DersEkle: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @Query private var items: [Item]
     @State private var lessonN = ""
     @State private var lesId = UUID().uuidString
@@ -35,15 +36,8 @@ struct DersEkle: View {
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 25)
-                .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.351, saturation: 0.657, brightness: 0.848, opacity: 0.602))
-                .offset(x: -270)
-            RoundedRectangle(cornerRadius: 25)
-                .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.518, saturation: 0.669, brightness: 0.77, opacity: 0.622))
-                .offset(x: 300)
-            
+            RadialGradient(gradient: Gradient(colors: [Color(hue: 0.309, saturation: 0.652, brightness: 0.455, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650)
+                .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center){
                 TextField("Lesson Name", text: $lessonN) {
                 }.focused($emailBool)
@@ -100,29 +94,28 @@ struct DersEkle: View {
                             dismissButton: .default(Text("OK"))
                         )
                     }
-            } .edgesIgnoringSafeArea(.bottom)
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading:
-                    Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.backward")
-                            .fontWeight(.bold)
-                        Text("Back to Syllabus")
-                            .fontWeight(.bold)
-                    }
-                })
-                
-                
-
-
-            
-            
-            
-        }.onTapGesture {
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                                    Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image(systemName: "chevron.backward")
+                        .fontWeight(.bold)
+                    Text("Back to Syllabus")
+                        .fontWeight(.bold)
+                }
+            })
+        }
+        .onAppear{
+            lessonStart =  funcs.subtractMinutes(from: lessonEnd, minutes: 15)
+        }
+        .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
     }
     private func addItem() {
         withAnimation {
@@ -164,7 +157,7 @@ struct DersEkle: View {
                     print("convert failed")
                 }
             }
-           
+            
         }
     }
 }

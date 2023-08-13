@@ -13,6 +13,7 @@ struct addExam: View {
     @Environment(\.presentationMode) var presentationMode
     @Query private var exams: [Exam]
     @State private var examN = ""
+    @State private var selectionTime = ""
     @State private var id = UUID().uuidString
     @State private var examD = Date()
     @State private var examT = Date()
@@ -27,15 +28,7 @@ struct addExam: View {
     }
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 25)
-                .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.309, saturation: 0.652, brightness: 0.655, opacity: 0.602))
-                .offset(x: -270)
-            RoundedRectangle(cornerRadius: 25)
-                .blur(radius: 250)
-                .foregroundColor(Color(hue: 0.594, saturation: 0.696, brightness: 0.75, opacity: 0.622))
-                .offset(x: 300)
-            
+           
             VStack{
                 TextField("Exam", text: $examN)
                     .focused($emailBool)
@@ -79,7 +72,27 @@ struct addExam: View {
                     }
             }
             
-        }
+        }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image(systemName: "chevron.backward")
+                        .fontWeight(.bold)
+                    Text("Back to Schedule")
+                        .fontWeight(.bold)
+                }
+            })
+        RoundedRectangle(cornerRadius: 25)
+            .blur(radius: 250)
+            .foregroundColor(Color(hue: 0.309, saturation: 0.652, brightness: 0.655, opacity: 0.602))
+            .offset(x: -270)
+        RoundedRectangle(cornerRadius: 25)
+            .blur(radius: 250)
+            .foregroundColor(Color(hue: 0.594, saturation: 0.696, brightness: 0.75, opacity: 0.622))
+            .offset(x: 300)
         
     }
     private func addItem() {

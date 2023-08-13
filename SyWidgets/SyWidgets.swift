@@ -20,7 +20,7 @@ struct Provider: TimelineProvider {
     }
 
     @MainActor func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let timeline = Timeline(entries: [SimpleEntry(date: .now, examsArr: getExams())], policy: .after(.now.advanced(by: 60*5)))
+        let timeline = Timeline(entries: [SimpleEntry(date: .now, examsArr: getExams())], policy: .after(.now.advanced(by: 60*2)))
         completion(timeline)
     }
 }
