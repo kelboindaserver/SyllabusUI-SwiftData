@@ -1,18 +1,34 @@
-# 💫 About Me:
-🔭 I'm a software engineering student in Türkiye.<br>🤝 I’m looking for help with Swift<br>🌱 I’m currently learning Swift 
+<br clear="both">
+
+<h1 align="center">SylabbusUI: Your Ultimate Study Tracker App with SwiftUI<br>Introduction</h1>
+
+###
+
+<h3 align="left">In the fast-paced world of education and learning, staying organized and managing your study schedule efficiently is essential. Introducing SylabbusUI, a simple yet powerful study tracker app designed using SwiftUI. With SylabbusUI, you can effortlessly keep track of your lessons, exams, and set reminders to ensure you stay on top of your academic journey.<br><br>Features<br>1. Easy Lesson and Exam Management<br>SylabbusUI simplifies the process of managing your study materials by allowing you to enter lesson and exam details with ease. With an intuitive user interface, you can input the subject, date, time, and duration of your lessons and exams, helping you create a structured study plan.<br><br>2. Smart Reminder System<br>Never miss an important lesson or exam again! SylabbusUI's built-in reminder system enables you to set customized reminders for each lesson and exam. Whether it's a quick notification or an alert in advance, you'll receive timely reminders to keep you focused and prepared.<br><br>3. User-Friendly Interface<br>Designed using SwiftUI, SylabbusUI offers a seamless and visually appealing user experience. The clean and modern interface ensures that navigating through the app is both intuitive and enjoyable, making your study planning a stress-free task.<br><br>4. Intuitive Calendar View<br>Visualizing your study schedule is crucial for effective time management. SylabbusUI provides an intuitive calendar view that displays your lessons and exam dates in a clear and organized manner. This calendar view allows you to quickly identify busy periods and plan your study sessions accordingly.</h3>
+
+###
+
+<div align="center">
+  <img src="https://github.com/kelboindaserver/SyllabusUI-SwiftData/blob/main/SyllabusUI/Assets.xcassets/sylabbusMain.png" />
+   <img src="https://github.com/kelboindaserver/SyllabusUI-SwiftData/blob/main/SyllabusUI/Assets.xcassets/examMain.png" />
+     <img src="https://github.com/kelboindaserver/SyllabusUI-SwiftData/blob/main/SyllabusUI/Assets.xcassets/LessonAdd.png" />
+        <img src="https://github.com/kelboindaserver/SyllabusUI-SwiftData/blob/main/SyllabusUI/Assets.xcassets/ExamAdd.png" />
 
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sefeoz) [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/kelboiindahoood) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/sefeoz) 
+</div>
 
-# 💻 Tech Stack:
-![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Adobe Photoshop](https://img.shields.io/badge/adobephotoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white) ![Adobe Premiere Pro](https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=kelboindaserver&theme=blue-green&hide_border=false&include_all_commits=false&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=kelboindaserver&theme=blue-green&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=kelboindaserver&theme=blue-green&hide_border=false&include_all_commits=false&count_private=true&layout=compact)
+###
+<h3 align="left">SylabbusUI is more than just a study tracker app – it's your dedicated companion on your educational journey. With its intuitive features, smart reminders, and user-friendly interface, staying on top of your lessons and exams has never been easier. Whether you're a student, a professional, or anyone seeking effective study management, SylabbusUI is here to simplify your life and help you excel in your learning endeavors.
 
----
-[![](https://visitcount.itsvg.in/api?id=kelboindaserver&icon=0&color=1)](https://visitcount.itsvg.in)
+Try SylabbusUI today and experience the future of study tracking with SwiftUI. Stay organized, stay productive!</h3>
+###
+<div align="left">
+  <a href="sadanefeozz0@gmail.com" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="52" height="40" alt="gmail logo"  />
+  </a>
+  <a href="https://twitter.com/sefeoz" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg"  alt="twitter logo"  />
+  </a>
+</div>
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+###
