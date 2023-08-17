@@ -11,6 +11,7 @@ import SwiftData
 struct addExam: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @Query private var exams: [Exam]
     @State private var examN = ""
     @State private var selectionTime = ""
@@ -28,7 +29,8 @@ struct addExam: View {
     }
     var body: some View {
         ZStack{
-           
+            RadialGradient(gradient: Gradient(colors: [Color(hue: 0.409, saturation: 0.652, brightness: 0.355, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650)
+                .edgesIgnoringSafeArea(.all)
             VStack{
                 TextField("Exam", text: $examN)
                     .focused($emailBool)
@@ -85,19 +87,10 @@ struct addExam: View {
                         .fontWeight(.bold)
                 }
             })
-        RoundedRectangle(cornerRadius: 25)
-            .blur(radius: 250)
-            .foregroundColor(Color(hue: 0.309, saturation: 0.652, brightness: 0.655, opacity: 0.602))
-            .offset(x: -270)
-        RoundedRectangle(cornerRadius: 25)
-            .blur(radius: 250)
-            .foregroundColor(Color(hue: 0.594, saturation: 0.696, brightness: 0.75, opacity: 0.622))
-            .offset(x: 300)
-        
     }
     private func addItem() {
         withAnimation {
-            @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT,id: id)
+            @Bindable var newItem = Exam(examName: examN, examDate: examD, examTime: ExamT,id: id, alertBool: false)
             modelContext.insert(newItem)
             notify.sendNotification(date: funcs.subtractMinutes(from: examD, minutes: 15), type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(examN) Exam today at \(funcs.getFormattedTime(date: examD))", id: id)
         }

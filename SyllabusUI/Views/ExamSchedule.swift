@@ -7,11 +7,16 @@
 
 import SwiftUI
 import SwiftData
-
+import PopupView
 
 struct ExamSchedule: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) var colorScheme
     @Query private var exams: [Exam]
+    @State private var showingPopup = false
+    @State private var showingButton = true
+    @State private var selectTime = 15
+    @State private var times = [0,10,15,30,45,60,90,120]
     let funcs = Funcs()
     
     func formattedDate(date: Date) -> String {
@@ -25,40 +30,47 @@ struct ExamSchedule: View {
     var body: some View {
         NavigationView{
             ZStack{
-                RoundedRectangle(cornerRadius: 25)
-                    .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.474, saturation: 0.837, brightness: 0.74, opacity: 0.726))
-                    .offset(x: -270)
-                RoundedRectangle(cornerRadius: 25)
-                    .blur(radius: 250)
-                    .foregroundColor(Color(hue: 0.612, saturation: 1.0, brightness: 1.0, opacity: 0.602))
-                    .offset(x: 300)
+                RadialGradient(gradient: Gradient(colors: [Color(hue: 0.809, saturation: 0.652, brightness: 0.355, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650)
+                    .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading){
                     Text("Exam Schedule")
                         .font(.system(size: 30,weight: .bold))
                         .padding(.horizontal, 30)
-                    List{
-                        ForEach(sortedExams){ exam in
-                            Section(header: Text(formattedDate(date:exam.examDate))
-                                .fontWeight(.bold)
-                                .font(.system(size: 22))) {
-                                    
-                                    HStack{
-                                        Text(exam.examName)
-                                            .padding()
-                                            .fontWeight(.bold)
-                                            .font(.system(size: 20))
-                                        Spacer()
-                                        Text(funcs.getFormattedTime(date: exam.examDate))
-                                            .padding()
-                                            .fontWeight(.light)
-                                            .font(.system(size: 15))
+                    if exams.isEmpty{
+                        ContentUnavailableView("Exam are empty", systemImage: "square.dashed",description: Text("Tap \(Image(systemName: "plus.circle.fill")) to create Exam"))
+                    }else{
+                        List{
+                            ForEach(sortedExams){ exam in
+                                Section(header: Text(formattedDate(date:exam.examDate))
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 22))) {
+                                        
+                                        HStack{
+                                            Button {
+                                                exam.alertBool.toggle()
+                                                if !exam.alertBool{
+                                                    showingPopup = true
+                                                }
+                                            } label: {
+                                                Image(systemName: exam.alertBool ? "alarm" : "alarm.fill")
+                                                    .contentTransition(.symbolEffect(.replace.offUp))
+                                            }
+                                            Text(exam.examName)
+                                                .padding()
+                                                .fontWeight(.bold)
+                                                .font(.system(size: 20))
+                                            Spacer()
+                                            Text(funcs.getFormattedTime(date: exam.examDate))
+                                                .padding()
+                                                .fontWeight(.light)
+                                                .font(.system(size: 15))
+                                        }
+                                        
                                     }
-                                    
-                                }
-                            
-                        } .onDelete(perform: deleteItems)
-                    }.scrollContentBackground(.hidden)
+                                
+                            } .onDelete(perform: deleteItems)
+                        }.scrollContentBackground(.hidden)
+                    }
                 }
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -67,10 +79,39 @@ struct ExamSchedule: View {
                 ToolbarItem {
                     NavigationLink(destination: addExam()) {
                         Image(systemName: "plus.circle.fill")
-                        
                     }
                     
+                    
+                    
                 }
+            } .popup(isPresented: $showingPopup) {
+                VStack{
+                    Text("Select Time")
+                        .cornerRadius(30.0)
+                    Picker("", selection: $selectTime) {
+                        ForEach(times , id: \.self){ time in
+                            Text("\(time)")
+                        }
+                        
+
+                    }
+                    Button {
+                        showingPopup = false
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                .padding(EdgeInsets(top: 37, leading: 24, bottom: 40, trailing: 24))
+                        .background(Color.gray.cornerRadius(20))
+                        .shadow(radius: 25)
+                        .padding(.horizontal, 40)
+                
+            }customize: {
+                $0
+                    
+                    .closeOnTap(false)
+                    .backgroundColor(.black.opacity(0.4))
             }
         }.navigationViewStyle(StackNavigationViewStyle())
         

@@ -14,10 +14,12 @@ final class Exam {
     var examDate : Date
     var examTime : String
     var id : String
-    init(examName: String, examDate: Date, examTime: String,id : String) {
+    var alertBool : Bool
+    init(examName: String, examDate: Date, examTime: String, id: String, alertBool: Bool) {
         self.examName = examName
         self.examDate = examDate
         self.examTime = examTime
         self.id = id
+        self.alertBool = alertBool
     }
 }

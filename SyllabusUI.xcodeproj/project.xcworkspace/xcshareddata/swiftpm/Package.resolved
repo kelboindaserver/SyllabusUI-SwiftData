@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "animatedtabbar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/AnimatedTabBar.git",
+      "state" : {
+        "revision" : "1eef24600ecb6882ff81445dbf1b02537e74c4b3",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "popupview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/PopupView.git",
+      "state" : {
+        "revision" : "68349a0ae704b9a7041f756f3f4f460ddbf7ba8d",
+        "version" : "2.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}
