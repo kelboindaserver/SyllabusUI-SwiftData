@@ -148,7 +148,7 @@ struct ContentView: View {
                         EditButton()
                     }
                     ToolbarItem {
-                        NavigationLink(destination: DersEkle()) {
+                        NavigationLink(destination: addDers()) {
                             Image(systemName: "plus.circle.fill")
                         }
                     }

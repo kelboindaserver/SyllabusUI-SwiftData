@@ -18,12 +18,6 @@ struct ExamSchedule: View {
     @State private var selectTime = 15
     @State private var times = [0,10,15,30,45,60,90,120]
     let funcs = Funcs()
-    
-    func formattedDate(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy , E"
-        return dateFormatter.string(from: date)
-    }
     var sortedExams: [Exam] {
         return exams.sorted { $0.examDate < $1.examDate }
     }
@@ -41,18 +35,18 @@ struct ExamSchedule: View {
                     }else{
                         List{
                             ForEach(sortedExams){ exam in
-                                Section(header: Text(formattedDate(date:exam.examDate))
+                                Section(header: Text(funcs.formattedDate(date:exam.examDate))
                                     .fontWeight(.bold)
                                     .font(.system(size: 22))) {
                                         
                                         HStack{
                                             Button {
                                                 exam.alertBool.toggle()
-                                                if !exam.alertBool{
+                                                if exam.alertBool{
                                                     showingPopup = true
                                                 }
                                             } label: {
-                                                Image(systemName: exam.alertBool ? "alarm" : "alarm.fill")
+                                                Image(systemName: exam.alertBool ? "alarm.fill" : "alarm")
                                                     .contentTransition(.symbolEffect(.replace.offUp))
                                             }
                                             Text(exam.examName)
@@ -84,7 +78,8 @@ struct ExamSchedule: View {
                     
                     
                 }
-            } .popup(isPresented: $showingPopup) {
+            } 
+            .popup(isPresented: $showingPopup) {
                 VStack{
                     Text("Select Time")
                         .cornerRadius(30.0)
@@ -99,19 +94,19 @@ struct ExamSchedule: View {
                         showingPopup = false
                         
                     } label: {
+                        Text("Set Time")
                         Image(systemName: "plus")
+                            
                     }
                 }
                 .padding(EdgeInsets(top: 37, leading: 24, bottom: 40, trailing: 24))
-                        .background(Color.gray.cornerRadius(20))
-                        .shadow(radius: 25)
-                        .padding(.horizontal, 40)
+                .background(Color.black.cornerRadius(20))
+                .padding(.horizontal, 40)
                 
             }customize: {
                 $0
-                    
                     .closeOnTap(false)
-                    .backgroundColor(.black.opacity(0.4))
+                    .backgroundColor(.black.opacity(0.7))
             }
         }.navigationViewStyle(StackNavigationViewStyle())
         

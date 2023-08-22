@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct DersEkle: View {
+struct addDers: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
@@ -163,5 +163,5 @@ struct DersEkle: View {
 }
 
 #Preview {
-    DersEkle()
+    addDers()
 }

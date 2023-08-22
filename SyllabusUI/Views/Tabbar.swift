@@ -63,8 +63,9 @@ struct Tabbar: View {
                .padding(.horizontal,20)
                .padding(.bottom,10)
                .containerRelativeFrame(.vertical, alignment: .bottom)
+        }.onAppear{
+            notify.askPerm()
         }
-            
                 
         }
 //                TabView(selection: $selectedTab) {
