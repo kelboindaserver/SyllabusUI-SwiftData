@@ -151,7 +151,8 @@ struct addDers: View {
                 }
             }else{
                 if let timeInt = funcs.convertToHourAndMinute(lessonSTime){
-                    print("success not am")
+                    print(timeInt.hour)
+                    print(timeInt.minute)
                     NotificationHandler().sendNotification(date: Date(), type: "lesson", day: day, hour: timeInt.hour, minute: timeInt.minute, title: "Syllabus UI", body: " You have \(lessonN) lesson today at \(lessonSTime)",id: lesId)
                 }else{
                     print("convert failed")

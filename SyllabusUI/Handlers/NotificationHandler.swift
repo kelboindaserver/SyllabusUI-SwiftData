@@ -22,7 +22,7 @@ class NotificationHandler {
         var trigger: UNNotificationTrigger?
         if type == "exam" {
             let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
-            trigger = UNCalendarNotificationTrigger (dateMatching: dateComponents, repeats: false)
+            trigger = UNCalendarNotificationTrigger (dateMatching: dateComponents, repeats: false)	
         } else if type == "lesson" {
             var dateComponents = DateComponents()
             dateComponents.weekday = day

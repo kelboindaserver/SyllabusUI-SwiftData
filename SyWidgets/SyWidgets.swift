@@ -27,7 +27,7 @@ struct Provider: TimelineProvider {
 
 @MainActor
 private func getExams() -> [Exam]{
-    guard let modelContainer = try? ModelContainer(for: [Exam.self]) else{
+    guard let modelContainer = try? ModelContainer(for: Exam.self) else{
         return []
     }
     let descriptor = FetchDescriptor<Exam>()

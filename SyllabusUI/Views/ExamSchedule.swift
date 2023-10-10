@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-import PopupView
+import Combine
 
 struct ExamSchedule: View {
     @Environment(\.modelContext) private var modelContext
@@ -15,9 +15,10 @@ struct ExamSchedule: View {
     @Query private var exams: [Exam]
     @State private var showingPopup = false
     @State private var showingButton = true
-    @State private var selectTime = 15
+    @State private var selectTime = ""
     @State private var times = [0,10,15,30,45,60,90,120]
     let funcs = Funcs()
+    let notify = NotificationHandler()
     var sortedExams: [Exam] {
         return exams.sorted { $0.examDate < $1.examDate }
     }
@@ -40,36 +41,61 @@ struct ExamSchedule: View {
                                     .font(.system(size: 22))) {
                                         
                                         HStack{
-                                            Button {
-                                                exam.alertBool.toggle()
-                                                if exam.alertBool{
-                                                    showingPopup = true
+                                            VStack{
+                                                Button {
+                                                    exam.alertBool.toggle()
+                                                    if exam.alertBool{
+                                                        showingPopup = true
+                                                    }else{
+                                                        funcs.cancelNotification(id: exam.id)
+                                                    }
+                                                } label: {
+                                                    Image(systemName: exam.alertBool ? "alarm.fill" : "alarm")
+                                                        .contentTransition(.symbolEffect(.replace.offUp))
                                                 }
-                                            } label: {
-                                                Image(systemName: exam.alertBool ? "alarm.fill" : "alarm")
-                                                    .contentTransition(.symbolEffect(.replace.offUp))
                                             }
-                                            Text(exam.examName)
-                                                .padding()
-                                                .fontWeight(.bold)
-                                                .font(.system(size: 20))
-                                            Spacer()
-                                            Text(funcs.getFormattedTime(date: exam.examDate))
-                                                .padding()
-                                                .fontWeight(.light)
-                                                .font(.system(size: 15))
+                                            HStack{
+                                                Text(exam.examName)
+                                                    .padding()
+                                                    .fontWeight(.bold)
+                                                    .font(.system(size: 20))
+                                                Spacer()
+                                                Text(funcs.getFormattedTime(date: exam.examDate))
+                                                    .padding()
+                                                    .fontWeight(.light)
+                                                    .font(.system(size: 15))
+                                            }
                                         }
                                         
-                                    }
+                                    }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                        TextField("Default : 15", text: $selectTime)
+                                                        .keyboardType(.numberPad)
+                                                        .onReceive(Just(selectTime)) { newText in
+                                                            let filtered = newText.filter { "0123456789".contains($0) }
+                                                            if filtered != newText {
+                                                                self.selectTime = filtered
+                                                            }
+                                                            if let number = Int(filtered), !(0...240).contains(number) {
+                                                                        self.selectTime = "240"
+                                                                    }
+                                                            
+                                                        }
+                                                        .padding()
+                                        Button("OK") {
+                                            notify.sendNotification(date: funcs.subtractMinutes(from: exam.examDate, minutes: Int(selectTime) ?? 15), type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(exam.examName) Exam today at \(funcs.getFormattedTime(date: exam.examDate))", id: exam.id)
+                                            if self.selectTime.isEmpty {
+                                                        self.selectTime = "15" // Varsayılan bir değer belirleyebilirsiniz.
+                                                    }
+                                           }
+                                    }, message: {
+                                        Text("How many minutes before notification should be sent?")
+                                    })
                                 
                             } .onDelete(perform: deleteItems)
                         }.scrollContentBackground(.hidden)
                     }
                 }
             }.toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
                     NavigationLink(destination: addExam()) {
                         Image(systemName: "plus.circle.fill")
@@ -78,35 +104,6 @@ struct ExamSchedule: View {
                     
                     
                 }
-            } 
-            .popup(isPresented: $showingPopup) {
-                VStack{
-                    Text("Select Time")
-                        .cornerRadius(30.0)
-                    Picker("", selection: $selectTime) {
-                        ForEach(times , id: \.self){ time in
-                            Text("\(time)")
-                        }
-                        
-
-                    }
-                    Button {
-                        showingPopup = false
-                        
-                    } label: {
-                        Text("Set Time")
-                        Image(systemName: "plus")
-                            
-                    }
-                }
-                .padding(EdgeInsets(top: 37, leading: 24, bottom: 40, trailing: 24))
-                .background(Color.black.cornerRadius(20))
-                .padding(.horizontal, 40)
-                
-            }customize: {
-                $0
-                    .closeOnTap(false)
-                    .backgroundColor(.black.opacity(0.7))
             }
         }.navigationViewStyle(StackNavigationViewStyle())
         

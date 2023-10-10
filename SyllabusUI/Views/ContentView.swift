@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import AnimatedTabBar
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
@@ -144,9 +143,6 @@ struct ContentView: View {
                 
             }.background(RadialGradient(gradient: Gradient(colors: [Color(hue: 0.609, saturation: 0.652, brightness: 0.655, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650))
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
                     ToolbarItem {
                         NavigationLink(destination: addDers()) {
                             Image(systemName: "plus.circle.fill")
