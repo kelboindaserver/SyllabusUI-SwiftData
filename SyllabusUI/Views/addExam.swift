@@ -32,17 +32,21 @@ struct addExam: View {
             RadialGradient(gradient: Gradient(colors: [Color(hue: 0.409, saturation: 0.652, brightness: 0.355, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650)
                 .edgesIgnoringSafeArea(.all)
             VStack{
+                Text("Exam Name")
+                    .font(.system(size: 24,weight: .bold))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding((.leading),34)
                 TextField("Exam", text: $examN)
                     .focused($emailBool)
-                        .textContentType(.emailAddress)
-                        .autocapitalization(.none)
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14)
-                                .stroke(emailBool ? .blue:.gray, lineWidth: 2)
-                        )
-                        .padding([.top,.trailing,.leading] , 30)
-                        .font(.system(.headline, design: .rounded,weight: .bold))
+                    .textContentType(.emailAddress)
+                    .autocapitalization(.none)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(emailBool ? .blue:.gray, lineWidth: 2)
+                    )
+                    .padding([.trailing,.leading] , 30)
+                    .font(.system(.headline, design: .rounded))
                 VStack{
                     Text("Exam Time:")
                     DatePicker("", selection: $examD,displayedComponents: [.date,.hourAndMinute])
@@ -77,7 +81,7 @@ struct addExam: View {
         }.edgesIgnoringSafeArea(.bottom)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading:
-                Button(action: {
+                                    Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {

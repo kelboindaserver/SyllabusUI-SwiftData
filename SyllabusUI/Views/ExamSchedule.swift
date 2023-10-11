@@ -69,24 +69,24 @@ struct ExamSchedule: View {
                                         
                                     }.alert("Select Time", isPresented: $showingPopup, actions: {
                                         TextField("Default : 15", text: $selectTime)
-                                                        .keyboardType(.numberPad)
-                                                        .onReceive(Just(selectTime)) { newText in
-                                                            let filtered = newText.filter { "0123456789".contains($0) }
-                                                            if filtered != newText {
-                                                                self.selectTime = filtered
-                                                            }
-                                                            if let number = Int(filtered), !(0...240).contains(number) {
-                                                                        self.selectTime = "240"
-                                                                    }
-                                                            
-                                                        }
-                                                        .padding()
+                                            .keyboardType(.numberPad)
+                                            .onReceive(Just(selectTime)) { newText in
+                                                let filtered = newText.filter { "0123456789".contains($0) }
+                                                if filtered != newText {
+                                                    self.selectTime = filtered
+                                                }
+                                                if let number = Int(filtered), !(0...240).contains(number) {
+                                                    self.selectTime = "240"
+                                                }
+                                                
+                                            }
+                                            .padding()
                                         Button("OK") {
                                             notify.sendNotification(date: funcs.subtractMinutes(from: exam.examDate, minutes: Int(selectTime) ?? 15), type: "exam",day: 0,hour: 0,minute: 0, title: "Syllabus UI", body: "You have \(exam.examName) Exam today at \(funcs.getFormattedTime(date: exam.examDate))", id: exam.id)
                                             if self.selectTime.isEmpty {
-                                                        self.selectTime = "15" // Varsayılan bir değer belirleyebilirsiniz.
-                                                    }
-                                           }
+                                                self.selectTime = "15"
+                                            }
+                                        }
                                     }, message: {
                                         Text("How many minutes before notification should be sent?")
                                     })

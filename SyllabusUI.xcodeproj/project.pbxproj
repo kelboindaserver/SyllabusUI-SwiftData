@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6471E462A83BE1700F7D870 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C4992A7FCE230051E306 /* WidgetKit.framework */; };
-		D6471E472A83BE1700F7D870 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D636C49B2A7FCE230051E306 /* SwiftUI.framework */; };
-		D6471E4A2A83BE1700F7D870 /* SyWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6471E492A83BE1700F7D870 /* SyWidgetsBundle.swift */; };
-		D6471E4C2A83BE1700F7D870 /* SyWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6471E4B2A83BE1700F7D870 /* SyWidgets.swift */; };
-		D6471E4E2A83BE1900F7D870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6471E4D2A83BE1900F7D870 /* Assets.xcassets */; };
-		D6471E522A83BE1900F7D870 /* SyWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D6471E452A83BE1700F7D870 /* SyWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D6471E562A83BE2200F7D870 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23AB2A76E40800428FB5 /* Exam.swift */; };
-		D6471E572A83BE2400F7D870 /* Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C18E012A7E5664009AE732 /* Funcs.swift */; };
 		D656272E2A76CBB9001641DF /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272D2A76CBB9001641DF /* Tabbar.swift */; };
 		D65627302A76CCB5001641DF /* ExamSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656272F2A76CCB5001641DF /* ExamSchedule.swift */; };
 		D67A7AEC2A768F3300E5AE82 /* SyllabusUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AEB2A768F3300E5AE82 /* SyllabusUIApp.swift */; };
@@ -23,7 +15,6 @@
 		D67A7AF32A768F3500E5AE82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A7AF22A768F3500E5AE82 /* Preview Assets.xcassets */; };
 		D67A7AF52A768F3500E5AE82 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AF42A768F3500E5AE82 /* Item.swift */; };
 		D67A7AFC2A7691BD00E5AE82 /* DersEkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A7AFB2A7691BD00E5AE82 /* DersEkle.swift */; };
-		D681E3452A844CF100DF7B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67A7AEF2A768F3500E5AE82 /* Assets.xcassets */; };
 		D68D8B752A8AF6570072A3B1 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = D68D8B742A8AF6570072A3B1 /* PopupView */; };
 		D694AC5F2A786FE800C24B02 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */; };
 		D69B23A82A76DFB200428FB5 /* addExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B23A72A76DFB200428FB5 /* addExam.swift */; };
@@ -32,16 +23,6 @@
 		D6C18E022A7E5664009AE732 /* Funcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C18E012A7E5664009AE732 /* Funcs.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D6471E502A83BE1900F7D870 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D67A7AE02A768F3300E5AE82 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D6471E442A83BE1700F7D870;
-			remoteInfo = SyWidgetsExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		D636C4A82A7FCE250051E306 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -49,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D6471E522A83BE1900F7D870 /* SyWidgetsExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,11 +39,6 @@
 /* Begin PBXFileReference section */
 		D636C4992A7FCE230051E306 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D636C49B2A7FCE230051E306 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		D6471E452A83BE1700F7D870 /* SyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6471E492A83BE1700F7D870 /* SyWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgetsBundle.swift; sourceTree = "<group>"; };
-		D6471E4B2A83BE1700F7D870 /* SyWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyWidgets.swift; sourceTree = "<group>"; };
-		D6471E4D2A83BE1900F7D870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D6471E4F2A83BE1900F7D870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D656272D2A76CBB9001641DF /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		D656272F2A76CCB5001641DF /* ExamSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSchedule.swift; sourceTree = "<group>"; };
 		D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyllabusUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,22 +51,12 @@
 		D694AC5E2A786FE800C24B02 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		D69B23A72A76DFB200428FB5 /* addExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addExam.swift; sourceTree = "<group>"; };
 		D69B23AB2A76E40800428FB5 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
-		D6A80D932A8417330044D0DF /* SyWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SyWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		D6BC529A2A80F20100DFFA96 /* SyllabusUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SyllabusUI.entitlements; sourceTree = "<group>"; };
 		D6C18E012A7E5664009AE732 /* Funcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcs.swift; sourceTree = "<group>"; };
 		D6D5D07D2AC6E849004ED2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D6471E422A83BE1700F7D870 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6471E472A83BE1700F7D870 /* SwiftUI.framework in Frameworks */,
-				D6471E462A83BE1700F7D870 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D67A7AE52A768F3300E5AE82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,23 +78,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D6471E482A83BE1700F7D870 /* SyWidgets */ = {
-			isa = PBXGroup;
-			children = (
-				D6471E492A83BE1700F7D870 /* SyWidgetsBundle.swift */,
-				D6471E4B2A83BE1700F7D870 /* SyWidgets.swift */,
-				D6471E4D2A83BE1900F7D870 /* Assets.xcassets */,
-				D6471E4F2A83BE1900F7D870 /* Info.plist */,
-			);
-			path = SyWidgets;
-			sourceTree = "<group>";
-		};
 		D67A7ADF2A768F3300E5AE82 = {
 			isa = PBXGroup;
 			children = (
-				D6A80D932A8417330044D0DF /* SyWidgetsExtension.entitlements */,
 				D67A7AEA2A768F3300E5AE82 /* SyllabusUI */,
-				D6471E482A83BE1700F7D870 /* SyWidgets */,
 				D636C4982A7FCE230051E306 /* Frameworks */,
 				D67A7AE92A768F3300E5AE82 /* Products */,
 			);
@@ -139,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				D67A7AE82A768F3300E5AE82 /* SyllabusUI.app */,
-				D6471E452A83BE1700F7D870 /* SyWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,23 +151,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D6471E442A83BE1700F7D870 /* SyWidgetsExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6471E532A83BE1900F7D870 /* Build configuration list for PBXNativeTarget "SyWidgetsExtension" */;
-			buildPhases = (
-				D6471E412A83BE1700F7D870 /* Sources */,
-				D6471E422A83BE1700F7D870 /* Frameworks */,
-				D6471E432A83BE1700F7D870 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SyWidgetsExtension;
-			productName = SyWidgetsExtension;
-			productReference = D6471E452A83BE1700F7D870 /* SyWidgetsExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		D67A7AE72A768F3300E5AE82 /* SyllabusUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D67A7AF82A768F3500E5AE82 /* Build configuration list for PBXNativeTarget "SyllabusUI" */;
@@ -229,7 +163,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D6471E512A83BE1900F7D870 /* PBXTargetDependency */,
 			);
 			name = SyllabusUI;
 			packageProductDependencies = (
@@ -250,9 +183,6 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					D6471E442A83BE1700F7D870 = {
-						CreatedOnToolsVersion = 15.0;
-					};
 					D67A7AE72A768F3300E5AE82 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -276,21 +206,11 @@
 			projectRoot = "";
 			targets = (
 				D67A7AE72A768F3300E5AE82 /* SyllabusUI */,
-				D6471E442A83BE1700F7D870 /* SyWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D6471E432A83BE1700F7D870 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D681E3452A844CF100DF7B39 /* Assets.xcassets in Resources */,
-				D6471E4E2A83BE1900F7D870 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D67A7AE62A768F3300E5AE82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,17 +223,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D6471E412A83BE1700F7D870 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6471E4A2A83BE1700F7D870 /* SyWidgetsBundle.swift in Sources */,
-				D6471E572A83BE2400F7D870 /* Funcs.swift in Sources */,
-				D6471E4C2A83BE1700F7D870 /* SyWidgets.swift in Sources */,
-				D6471E562A83BE2200F7D870 /* Exam.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D67A7AE42A768F3300E5AE82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,71 +242,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		D6471E512A83BE1900F7D870 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D6471E442A83BE1700F7D870 /* SyWidgetsExtension */;
-			targetProxy = D6471E502A83BE1900F7D870 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		D6471E542A83BE1900F7D870 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SyWidgetsExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YGJ86PX2CS;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SyWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SyWidgets;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kelboidev.SyllabusUI.SyWidgets;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D6471E552A83BE1900F7D870 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SyWidgetsExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YGJ86PX2CS;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SyWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SyWidgets;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kelboidev.SyllabusUI.SyWidgets;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		D67A7AF62A768F3500E5AE82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -531,9 +376,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SyllabusUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SyllabusUI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -564,9 +411,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SyllabusUI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SyllabusUI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -586,15 +435,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D6471E532A83BE1900F7D870 /* Build configuration list for PBXNativeTarget "SyWidgetsExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6471E542A83BE1900F7D870 /* Debug */,
-				D6471E552A83BE1900F7D870 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D67A7AE32A768F3300E5AE82 /* Build configuration list for PBXProject "SyllabusUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

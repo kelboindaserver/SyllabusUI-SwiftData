@@ -39,6 +39,10 @@ struct addDers: View {
             RadialGradient(gradient: Gradient(colors: [Color(hue: 0.309, saturation: 0.652, brightness: 0.455, opacity: 0.602), colorScheme == .dark ? .black : .white]), center: .center, startRadius: 2, endRadius: 650)
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center){
+                Text("Lesson Name")
+                    .font(.system(size: 24,weight: .bold))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding((.leading),34)
                 TextField("Lesson Name", text: $lessonN) {
                 }.focused($emailBool)
                     .textContentType(.emailAddress)
@@ -48,8 +52,8 @@ struct addDers: View {
                         RoundedRectangle(cornerRadius: 14)
                             .stroke(emailBool ? .blue:.gray, lineWidth: 2)
                     )
-                    .padding([.top,.trailing,.leading] , 30)
-                    .font(.system(.headline, design: .rounded,weight: .bold))
+                    .padding([.horizontal] , 30)
+                    .font(.system(.headline, design: .rounded,weight: .light))
                 Picker("Day", selection: $selection){
                     ForEach(days,id: \.self) {
                         Text($0)
