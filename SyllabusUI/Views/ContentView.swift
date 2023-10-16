@@ -7,12 +7,18 @@
 
 import SwiftUI
 import SwiftData
+import Combine
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) var colorScheme
     @State private var selectedIndex = 0
     @Query private var items: [Item]
+    @State private var showingPopup = false
+    @State private var showingButton = true
+    @State private var alertBool = true
+    @State private var selectTime = ""
+    @State private var times = [0,10,15,30,45,60,90,120]
     let funcs = Funcs()
     var body: some View {
         NavigationView {
@@ -31,6 +37,19 @@ struct ContentView: View {
                                     ForEach(items) { item in
                                         if item.day == "Monday"{
                                             HStack{
+                                                VStack{
+                                                    Button {
+                                                        alertBool.toggle()
+                                                        if alertBool{
+                                                            showingPopup = true
+                                                        }else{
+                                                            funcs.cancelNotification(id: item.id)
+                                                        }
+                                                    } label: {
+                                                        Image(systemName: alertBool ? "alarm.fill" : "alarm")
+                                                            .contentTransition(.symbolEffect(.replace.offUp))
+                                                    }
+                                                }
                                                 Text(item.lessonName)
                                                     .padding()
                                                     .fontWeight(.bold)
@@ -40,7 +59,29 @@ struct ContentView: View {
                                                     .padding()
                                                     .fontWeight(.light)
                                                     .font(.system(size: 15))
-                                            }
+                                            }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                                TextField("Default : 15", text: $selectTime)
+                                                    .keyboardType(.numberPad)
+                                                    .onReceive(Just(selectTime)) { newText in
+                                                        let filtered = newText.filter { "0123456789".contains($0) }
+                                                        if filtered != newText {
+                                                            self.selectTime = filtered
+                                                        }
+                                                        if let number = Int(filtered), !(0...240).contains(number) {
+                                                            self.selectTime = "240"
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                Button("OK") {
+                                                    
+                                                    if self.selectTime.isEmpty {
+                                                        self.selectTime = "15"
+                                                    }
+                                                }
+                                            }, message: {
+                                                Text("How many minutes before notification should be sent?")
+                                            })
                                             
                                         }
                                         
@@ -53,6 +94,19 @@ struct ContentView: View {
                                     ForEach(items) { item in
                                         if item.day == "Tuesday"{
                                             HStack{
+                                                VStack{
+                                                    Button {
+                                                        alertBool.toggle()
+                                                        if alertBool{
+                                                            showingPopup = true
+                                                        }else{
+                                                            funcs.cancelNotification(id: item.id)
+                                                        }
+                                                    } label: {
+                                                        Image(systemName: alertBool ? "alarm.fill" : "alarm")
+                                                            .contentTransition(.symbolEffect(.replace.offUp))
+                                                    }
+                                                }
                                                 Text(item.lessonName)
                                                     .padding()
                                                     .fontWeight(.bold)
@@ -62,7 +116,29 @@ struct ContentView: View {
                                                     .padding()
                                                     .fontWeight(.light)
                                                     .font(.system(size: 15))
-                                            }
+                                            }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                                TextField("Default : 15", text: $selectTime)
+                                                    .keyboardType(.numberPad)
+                                                    .onReceive(Just(selectTime)) { newText in
+                                                        let filtered = newText.filter { "0123456789".contains($0) }
+                                                        if filtered != newText {
+                                                            self.selectTime = filtered
+                                                        }
+                                                        if let number = Int(filtered), !(0...240).contains(number) {
+                                                            self.selectTime = "240"
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                Button("OK") {
+                                                    
+                                                    if self.selectTime.isEmpty {
+                                                        self.selectTime = "15"
+                                                    }
+                                                }
+                                            }, message: {
+                                                Text("How many minutes before notification should be sent?")
+                                            })
                                             
                                             
                                         }
@@ -76,6 +152,19 @@ struct ContentView: View {
                                     ForEach(items) { item in
                                         if item.day == "Wednesday"{
                                             HStack{
+                                                VStack{
+                                                    Button {
+                                                        alertBool.toggle()
+                                                        if alertBool{
+                                                            showingPopup = true
+                                                        }else{
+                                                            funcs.cancelNotification(id: item.id)
+                                                        }
+                                                    } label: {
+                                                        Image(systemName: alertBool ? "alarm.fill" : "alarm")
+                                                            .contentTransition(.symbolEffect(.replace.offUp))
+                                                    }
+                                                }
                                                 Text(item.lessonName)
                                                     .padding()
                                                     .fontWeight(.bold)
@@ -85,7 +174,29 @@ struct ContentView: View {
                                                     .padding()
                                                     .fontWeight(.light)
                                                     .font(.system(size: 15))
-                                            }
+                                            }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                                TextField("Default : 15", text: $selectTime)
+                                                    .keyboardType(.numberPad)
+                                                    .onReceive(Just(selectTime)) { newText in
+                                                        let filtered = newText.filter { "0123456789".contains($0) }
+                                                        if filtered != newText {
+                                                            self.selectTime = filtered
+                                                        }
+                                                        if let number = Int(filtered), !(0...240).contains(number) {
+                                                            self.selectTime = "240"
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                Button("OK") {
+                                                    
+                                                    if self.selectTime.isEmpty {
+                                                        self.selectTime = "15"
+                                                    }
+                                                }
+                                            }, message: {
+                                                Text("How many minutes before notification should be sent?")
+                                            })
                                             
                                         }
                                         
@@ -98,6 +209,19 @@ struct ContentView: View {
                                     ForEach(items) { item in
                                         if item.day == "Thursday"{
                                             HStack{
+                                                VStack{
+                                                    Button {
+                                                        alertBool.toggle()
+                                                        if alertBool{
+                                                            showingPopup = true
+                                                        }else{
+                                                            funcs.cancelNotification(id: item.id)
+                                                        }
+                                                    } label: {
+                                                        Image(systemName: alertBool ? "alarm.fill" : "alarm")
+                                                            .contentTransition(.symbolEffect(.replace.offUp))
+                                                    }
+                                                }
                                                 Text(item.lessonName)
                                                     .padding()
                                                     .fontWeight(.bold)
@@ -107,7 +231,29 @@ struct ContentView: View {
                                                     .padding()
                                                     .fontWeight(.light)
                                                     .font(.system(size: 15))
-                                            }
+                                            }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                                TextField("Default : 15", text: $selectTime)
+                                                    .keyboardType(.numberPad)
+                                                    .onReceive(Just(selectTime)) { newText in
+                                                        let filtered = newText.filter { "0123456789".contains($0) }
+                                                        if filtered != newText {
+                                                            self.selectTime = filtered
+                                                        }
+                                                        if let number = Int(filtered), !(0...240).contains(number) {
+                                                            self.selectTime = "240"
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                Button("OK") {
+                                                    
+                                                    if self.selectTime.isEmpty {
+                                                        self.selectTime = "15"
+                                                    }
+                                                }
+                                            }, message: {
+                                                Text("How many minutes before notification should be sent?")
+                                            })
                                             
                                         }
                                         
@@ -120,6 +266,19 @@ struct ContentView: View {
                                     ForEach(items) { item in
                                         if item.day == "Friday"{
                                             HStack{
+                                                VStack{
+                                                    Button {
+                                                        alertBool.toggle()
+                                                        if alertBool{
+                                                            showingPopup = true
+                                                        }else{
+                                                            funcs.cancelNotification(id: item.id)
+                                                        }
+                                                    } label: {
+                                                        Image(systemName: alertBool ? "alarm.fill" : "alarm")
+                                                            .contentTransition(.symbolEffect(.replace.offUp))
+                                                    }
+                                                }
                                                 Text(item.lessonName)
                                                     .padding()
                                                     .fontWeight(.bold)
@@ -129,7 +288,29 @@ struct ContentView: View {
                                                     .padding()
                                                     .fontWeight(.light)
                                                     .font(.system(size: 15))
-                                            }
+                                            }.alert("Select Time", isPresented: $showingPopup, actions: {
+                                                TextField("Default : 15", text: $selectTime)
+                                                    .keyboardType(.numberPad)
+                                                    .onReceive(Just(selectTime)) { newText in
+                                                        let filtered = newText.filter { "0123456789".contains($0) }
+                                                        if filtered != newText {
+                                                            self.selectTime = filtered
+                                                        }
+                                                        if let number = Int(filtered), !(0...240).contains(number) {
+                                                            self.selectTime = "240"
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                Button("OK") {
+                                                    
+                                                    if self.selectTime.isEmpty {
+                                                        self.selectTime = "15"
+                                                    }
+                                                }
+                                            }, message: {
+                                                Text("How many minutes before notification should be sent?")
+                                            })
                                             
                                         }
                                         
